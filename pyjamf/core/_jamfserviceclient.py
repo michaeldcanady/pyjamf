@@ -4,26 +4,23 @@ from pyrestsdk import AbstractServiceClient
 
 from pyjamf.core._client_factory import HTTPClientFactory
 
-from pyjamf.builder._v1_request_builder import V1RequestBuilder
-from pyjamf.builder._v2_request_builder import V2RequestBuilder
-from pyjamf.builder._v3_request_builder import V3RequestBuilder
+from pyjamf.builder.pro import JamfProRequestBuilder
+from pyjamf.builder.classic import JamfClassicRequestBuilder
 
 class JamfServiceClient(AbstractServiceClient):
     
     def __init__(self, credentials, hostname) -> None:
         self.jamf_session = self._get_session(credentials, hostname)
+    
+    @property
+    def pro_api(self) -> JamfProRequestBuilder:
         
-    @property
-    def v1(self) -> V1RequestBuilder:
-        return V1RequestBuilder(self.jamf_session.base_url+"/v1", self) # type: ignore
+        return JamfProRequestBuilder(self.jamf_session.base_url+"/api", self) #type: ignore
     
     @property
-    def v2(self) -> V2RequestBuilder:
-        return V2RequestBuilder(self.jamf_session.base_url+"/v2", self) # type: ignore
-    
-    @property
-    def v3(self) -> V3RequestBuilder:
-        return V3RequestBuilder(self.jamf_session.base_url+"/v3", self) # type: ignore
+    def classic_api(self) -> JamfClassicRequestBuilder:
+        
+        return JamfClassicRequestBuilder(self.jamf_session.base_url+"/JSSResource", self) #type: ignore
     
     def get(self, url: str, **kwargs):
         """Sends a GET request. Returns :class:`Response` object.
