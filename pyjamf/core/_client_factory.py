@@ -24,7 +24,7 @@ class HTTPClientFactory:
         
     def _set_base_url(self, hostname):
         """Helper method to set the base url"""
-        self.session.base_url = f"https://{hostname}.jamfcloud.com/api"
+        self.session.base_url = f"https://{hostname}.jamfcloud.com"
         
     def _register(self, middleware: typing.List[BaseMiddleware]) -> None:
         """
