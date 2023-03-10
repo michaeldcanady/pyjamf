@@ -15,6 +15,7 @@ class AdvancedComputerSearch(Entity):
     """Advanced Computer Search Type
     """
     
+    _name: str
     _computers: list
 
     def __init__(self: E, client: J) -> None:
@@ -26,6 +27,8 @@ class AdvancedComputerSearch(Entity):
     def from_json(cls: Type[E], entry: Dict, client: J) -> E:
 
         _new = cls(client)
+        
+        _new._name = entry.get("name", "")
 
         display_fields = entry["display_fields"]
 
