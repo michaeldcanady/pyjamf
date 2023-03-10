@@ -8,6 +8,8 @@ from pyjamf.request.classic._computer_group_entry_request import ComputerGroupEn
 from pyjamf.request.classic._computer_group_entry_collection_request import ComputerGroupEntryCollectionRequest
 from pyjamf.request.classic._computer_entry_collection_request import ComputerEntryCollectionRequest
 from pyjamf.request.classic._computer_entry_request import ComputerEntryRequest
+from pyjamf.request.classic._department_entry_collection_request import DepartmentEntryCollectionRequest
+from pyjamf.request.classic._department_entry_request import DepartmentEntryRequest
 
 __all__ = [
     "AdvancedComputerSearchEntryRequest",
@@ -20,4 +22,6 @@ __all__ = [
     "ComputerGroupEntryRequest",
     "ComputerEntryCollectionRequest",
     "ComputerEntryRequest",
+    "DepartmentEntryCollectionRequest",
+    "DepartmentEntryRequest",
 ]

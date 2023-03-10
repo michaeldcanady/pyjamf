@@ -11,6 +11,7 @@ from pyjamf.builder.classic._building_request_builder import BuildingRequestBuil
 from pyjamf.builder.classic._category_request_builder import CategoryRequestBuilder
 from pyjamf.builder.classic._computer_group_request_builder import ComputerGroupRequestBuilder
 from pyjamf.builder.classic._computer_request_builder import ComputerRequestBuilder
+from pyjamf.builder.classic._department_request_builder import DepartmentRequestBuilder
 
 if TYPE_CHECKING:
     from pyjamf.core import JamfServiceClient
@@ -78,3 +79,13 @@ class JamfClassicRequestBuilder(BaseRequestBuilder):
         """
         
         return ComputerRequestBuilder(self.append_segment_to_request_url("computers"), self.request_client)
+    
+    @property
+    def deparments(self) -> DepartmentRequestBuilder:
+        """Creates a Department Request Builder
+
+        Returns:
+            DepartmentRequestBuilder: The Department Request Builder
+        """
+        
+        return DepartmentRequestBuilder(self.append_segment_to_request_url("departments"), self.request_client)
