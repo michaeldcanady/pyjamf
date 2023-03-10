@@ -6,7 +6,7 @@ from pyrestsdk.type.model import QueryOption, HeaderOption
 
 from pyrestsdk.requestbuilder import EntityRequestBuilder
 
-from pyjamf.request import MobileDeviceEntryRequest
+from pyjamf.request.pro import MobileDeviceEntryRequest
 
 class MobileDeviceRequestBuilder(EntityRequestBuilder):
     """Mobile Device Request Builder Type"""

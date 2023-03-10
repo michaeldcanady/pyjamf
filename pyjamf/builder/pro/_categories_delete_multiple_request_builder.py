@@ -4,7 +4,7 @@ from typing import Optional, Iterable
 
 from pyrestsdk.requestbuilder import EntityRequestBuilder
 
-from pyjamf.request import DepartmentsCollectionRequest
+from pyjamf.request.pro import DepartmentsCollectionRequest
 
 
 class CategoriesDeleteMultipleRequestBuilder(EntityRequestBuilder):

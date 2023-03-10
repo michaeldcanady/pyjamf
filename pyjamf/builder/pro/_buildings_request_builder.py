@@ -4,9 +4,9 @@ from typing import Optional, Iterable
 
 from pyrestsdk.requestbuilder import EntityRequestBuilder
 
-from pyjamf.builder._buildings_delete_multiple_request_builder import BuildingsDeleteMultipleRequestBuilder
-from pyjamf.builder._buildings_export_request_builder import BuildingsExportRequestBuilder
-from pyjamf.builder._buildings_history_request_builder import BuildingsHistoryRequestBuilder
+from pyjamf.builder.pro._buildings_delete_multiple_request_builder import BuildingsDeleteMultipleRequestBuilder
+from pyjamf.builder.pro._buildings_export_request_builder import BuildingsExportRequestBuilder
+from pyjamf.builder.pro._buildings_history_request_builder import BuildingsHistoryRequestBuilder
 
 
 class BuildingsRequestBuilder(EntityRequestBuilder):

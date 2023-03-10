@@ -7,7 +7,7 @@ from pyrestsdk.type.model import QueryOption, HeaderOption
 
 from pyrestsdk.requestbuilder import EntityRequestBuilder
 
-from pyjamf.request import AdvancedUserContentSearchesEntryRequest, AdvancedUserContentSearchesEntryCollectionRequest
+from pyjamf.request.pro import AdvancedUserContentSearchesEntryRequest, AdvancedUserContentSearchesEntryCollectionRequest
 
 
 class AdvancedUserContentSearchesRequestBuilder(EntityRequestBuilder):

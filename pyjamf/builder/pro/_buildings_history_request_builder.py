@@ -4,7 +4,7 @@ from typing import Optional, Iterable
 
 from pyrestsdk.requestbuilder import EntityRequestBuilder
 
-from pyjamf.builder._buildings_history_export_request_builder import BuildingsHistoryExportRequestBuilder
+from pyjamf.builder.pro._buildings_history_export_request_builder import BuildingsHistoryExportRequestBuilder
 
 class BuildingsHistoryRequestBuilder(EntityRequestBuilder):
     """Advanced Mobile Device Searches Choices Request Builder Type"""

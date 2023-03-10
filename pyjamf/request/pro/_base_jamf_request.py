@@ -5,7 +5,7 @@ import json
 from pyrestsdk.request import BaseRequest
 from pyrestsdk.type.model import QueryOption, HeaderOption
 
-from pyjamf.types.exceptions import ServiceException, Error
+from pyjamf.types.pro.exceptions import ServiceException, Error
 from requests import Response
 
 if TYPE_CHECKING:

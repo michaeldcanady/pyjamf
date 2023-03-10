@@ -4,7 +4,7 @@ from pyrestsdk.type.model import QueryOption, HeaderOption
 
 from pyrestsdk.request.supports_types import SupportsGetMethod, SupportsInvokeCollectionRequest
 
-from pyjamf.request._base_jamf_request import BaseJamfEntryRequest
+from pyjamf.request.pro._base_jamf_request import BaseJamfEntryRequest
 
 class DepartmentsCollectionRequest(
     SupportsInvokeCollectionRequest,

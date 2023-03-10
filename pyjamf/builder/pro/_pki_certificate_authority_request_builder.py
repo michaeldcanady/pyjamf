@@ -2,7 +2,7 @@
 
 from pyrestsdk.requestbuilder import BaseRequestBuilder
 
-from pyjamf.builder._pki_certificate_authority_active_request_builder import PKICertificateAuthorityActiveRequestBuilder
+from pyjamf.builder.pro._pki_certificate_authority_active_request_builder import PKICertificateAuthorityActiveRequestBuilder
 
 class PKICertificateAuthorityRequestBuilder(BaseRequestBuilder):
     """Mobile Device Request Builder Type"""

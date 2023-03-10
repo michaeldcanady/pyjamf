@@ -1,10 +1,14 @@
 """Houses Computer Groups Request Builder Type"""
 
-from typing import Optional, Iterable
+from typing import Optional, Iterable, TypeVar
+
+from pyrestsdk.type.model import QueryOption
 
 from pyrestsdk.requestbuilder import EntityRequestBuilder
 
-from pyjamf.builder._client_check_in_history_request_builder import ClientCheckInHistoryRequestBuilder
+from pyjamf.builder.pro._client_check_in_history_request_builder import ClientCheckInHistoryRequestBuilder
+
+O = TypeVar("O", bound=QueryOption)
 
 class ComputerGroupsRequestBuilder(EntityRequestBuilder):
     """Computer Groups Request Builder Type"""
@@ -19,10 +23,10 @@ class ComputerGroupsRequestBuilder(EntityRequestBuilder):
 
         super().__init__(request_url, client)
         
-    def request(self: B) -> R:
+    def request(self):
         return self.request_with_options(None)
         
-    def request_with_options(self, options: Optional[Iterable[O]]) -> R:
+    def request_with_options(self, options: Optional[Iterable[O]]):
         return super().request_with_options(options)
     
     def request_by_id(self, id: str):
