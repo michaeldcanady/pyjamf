@@ -1,3 +1,6 @@
+"""Houses JAMF Service Client Type
+"""
+
 from requests import Session
 
 from pyrestsdk import AbstractServiceClient
@@ -7,21 +10,34 @@ from pyjamf.core._client_factory import HTTPClientFactory
 from pyjamf.builder.pro import JamfProRequestBuilder
 from pyjamf.builder.classic import JamfClassicRequestBuilder
 
+
 class JamfServiceClient(AbstractServiceClient):
-    
+    """JAMF Service Client Type
+    """
+
     def __init__(self, credentials, hostname) -> None:
         self.jamf_session = self._get_session(credentials, hostname)
-    
+
     @property
     def pro_api(self) -> JamfProRequestBuilder:
-        
-        return JamfProRequestBuilder(self.jamf_session.base_url+"/api", self) #type: ignore
-    
+        """Creates JAMF Pro Request Builder
+
+        Returns:
+            JamfProRequestBuilder: The JAMF Pro Request Builder
+        """
+
+        return JamfProRequestBuilder(self.jamf_session.base_url+"/api", self)
+
     @property
     def classic_api(self) -> JamfClassicRequestBuilder:
-        
-        return JamfClassicRequestBuilder(self.jamf_session.base_url+"/JSSResource", self) #type: ignore
-    
+        """Creates JAMF Classic Request Builder
+
+        Returns:
+            JamfClassicRequestBuilder: The JAMF Classic Request Builder
+        """
+
+        return JamfClassicRequestBuilder(self.jamf_session.base_url+"/JSSResource", self)
+
     def get(self, url: str, **kwargs):
         """Sends a GET request. Returns :class:`Response` object.
         :param url: URL for the new :class:`Request` object.
@@ -87,15 +103,25 @@ class JamfServiceClient(AbstractServiceClient):
         :rtype: requests.Response
         """
         return self.jamf_session.delete(self._instance_url(url), **kwargs)
-    
+
     def _instance_url(self, url: str) -> str:
         """Appends BASE_URL to user provided path
         :param url: user provided path
         :return: graph_url
         """
-        return self.jamf_session.base_url + url if (url[0] == '/') else url # type: ignore
-        
+        return self.jamf_session.base_url + url if (url[0] == '/') else url  # type: ignore
+
     @staticmethod
-    def _get_session(credential, hostname) -> Session:
+    def _get_session(credential, hostname: str) -> Session:
+        """Gets JAMF session
+
+        Args:
+            credential (_type_): Credentials used for auth
+            hostname (str): The hostname for JAMF Cloud
+
+        Returns:
+            Session: The JAMF Session
+        """
         
+
         return HTTPClientFactory(hostname).create_with_default_middleware(credential)

@@ -1,3 +1,6 @@
+""" PYJAMF Core
+"""
+
 from pyjamf.core._jamfserviceclient import JamfServiceClient
 
 __all__ = [
