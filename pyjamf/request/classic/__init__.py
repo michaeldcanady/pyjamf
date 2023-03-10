@@ -2,8 +2,9 @@ from pyjamf.request.classic._advanced_computer_search_entry_request import Advan
 from pyjamf.request.classic._base_jamf_request import BaseJamfEntryRequest
 from pyjamf.request.classic._building_entry_collection_request import BuildingEntryCollectionRequest
 from pyjamf.request.classic._building_entry_request import BuildingEntryRequest
-from pyjamf.request.classic._computer_group_entry_request import ComputerGroupEntryRequest
 from pyjamf.request.classic._category_entry_collection_request import CategoryEntryCollectionRequest
+from pyjamf.request.classic._category_entry_request import CategoryEntryRequest
+from pyjamf.request.classic._computer_group_entry_request import ComputerGroupEntryRequest
 from pyjamf.request.classic._computer_group_entry_collection_request import ComputerGroupEntryCollectionRequest
 
 __all__ = [
@@ -12,6 +13,7 @@ __all__ = [
     "BuildingEntryCollectionRequest",
     "BuildingEntryRequest",
     "CategoryEntryCollectionRequest",
+    "CategoryEntryRequest",
     "ComputerGroupEntryCollectionRequest",
     "ComputerGroupEntryRequest",
 ]

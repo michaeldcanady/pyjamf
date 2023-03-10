@@ -56,7 +56,7 @@ class JamfClassicRequestBuilder(BaseRequestBuilder):
             CategoryRequestBuilder: The Category Request Builder
         """
 
-        return CategoryRequestBuilder(self.append_segment_to_request_url("category"), self.request_client)
+        return CategoryRequestBuilder(self.append_segment_to_request_url("categories"), self.request_client)
 
     @property
     def computer_groups(self) -> ComputerGroupRequestBuilder:
