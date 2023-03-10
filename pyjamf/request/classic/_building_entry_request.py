@@ -30,16 +30,16 @@ class BuildingEntryRequest(
     """Building Entry Request Type
     """
 
-    def __init__(self, request_url: str, client, options: Optional[Iterable[Union[QueryOption, HeaderOption]]]) -> None:
+    def __init__(self, request_url: str, client: "JamfServiceClient", options: Optional[Iterable[Union[QueryOption, HeaderOption]]]) -> None:
         super().__init__(request_url, client, options)
 
-    def parse_result(self, obj_type, result: Union[Dict[str, Any], List[Dict[str, Any]]], client) -> Union[List[J], J]:
+    def parse_result(self, obj_type, result: Union[Dict[str, Any], List[Dict[str, Any]]], client: "JamfServiceClient") -> Union[List[J], J]:
         """parses return into expected return type
 
         Args:
             obj_type (_type_): _description_
             result (Union[Dict[str, Any], List[Dict[str, Any]]]): _description_
-            client (_type_): _description_
+            client (JamfServiceClient): _description_
 
         Raises:
             Exception: _description_

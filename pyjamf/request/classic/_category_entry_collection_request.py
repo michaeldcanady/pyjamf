@@ -1,36 +1,35 @@
-"""Houses Building Entry Collection Request Type
+"""Houses Category Entry Collection Request Type
 """
+from __future__ import annotations
 
-from typing import Optional, Iterable, Union
+from typing import Optional, Iterable, Union, TYPE_CHECKING, Optional, Iterable, Union, TypeVar, List, Dict, Any, Type, Callable
 
 from pyrestsdk.type.model import QueryOption, HeaderOption
-
-from typing import TYPE_CHECKING, Optional, Iterable, Union, TypeVar, List, Dict, Any, Type, Callable
 
 from pyrestsdk.request.supports_types import SupportsGetMethod, SupportsInvokeCollectionRequest
 
 from pyjamf.request.classic._base_jamf_request import BaseJamfEntryRequest
 
-from pyjamf.types.classic.models import Building
+from pyjamf.types.classic.models import Category
 
 if TYPE_CHECKING:
     from pyjamf.core import JamfServiceClient
 
-J = TypeVar("J", bound="JamfServiceClient")
+J = TypeVar("J", bound=JamfServiceClient)
 
 
-class BuildingEntryCollectionRequest(
+class CategoryEntryCollectionRequest(
     SupportsInvokeCollectionRequest,
     SupportsGetMethod,
-    BaseJamfEntryRequest[Building]
+    BaseJamfEntryRequest[Category]
 ):
-    """Building Entry Collection Request Type
+    """Category Entry Collection Request Type
     """
 
-    def __init__(self, request_url: str, client: "JamfServiceClient", options: Optional[Iterable[Union[QueryOption, HeaderOption]]]) -> None:
+    def __init__(self, request_url: str, client: JamfServiceClient, options: Optional[Iterable[Union[QueryOption, HeaderOption]]]) -> None:
         super().__init__(request_url, client, options)
 
-    def parse_result(self, obj_type, result: Union[Dict[str, Any], List[Dict[str, Any]]], client: "JamfServiceClient") -> Union[List[J], J]:
+    def parse_result(self, obj_type, result: Union[Dict[str, Any], List[Dict[str, Any]]], client: JamfServiceClient) -> Union[List[J], J]:
         """parses return into expected return type
 
         Args:
@@ -45,7 +44,7 @@ class BuildingEntryCollectionRequest(
             Union[List[J], J]: _description_
         """
 
-        result = result["buildings"]
+        result = result["categories"]
 
         _operation_dict: Dict[
             Type, Callable[[Union[Dict, List],
