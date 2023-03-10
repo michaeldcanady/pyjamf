@@ -8,6 +8,7 @@ from pyjamf.types.classic.models._jamf_entity import JAMFEntity
 
 from pyjamf.types.classic.models._abstract_building import AbstractBuilding
 from pyjamf.types.classic.models._abstract_category import AbstractCategory
+from pyjamf.types.classic.models._abstract_computer_group import AbstractComputerGroup
 from pyjamf.types.classic.models._abstract_jamf_entity import AbstractJAMFEntity
 
 __all__ = [
@@ -20,5 +21,6 @@ __all__ = [
     
     "AbstractBuilding",
     "AbstractCategory",
+    "AbstractComputerGroup",
     "AbstractJAMFEntity",
 ]

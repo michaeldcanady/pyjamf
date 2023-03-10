@@ -1,16 +1,21 @@
-from typing import TypeVar, TYPE_CHECKING, Type, Dict, List
+"""Houses Computer Group Type"""
 
-from pyrestsdk.type.model import Entity
+from __future__ import annotations
+
+from typing import TypeVar, TYPE_CHECKING, Type, Dict
 
 from pyjamf.types.classic.models._computer import Computer
+from pyjamf.types.classic.models._jamf_entity import JAMFEntity
+from pyjamf.types.classic.models._abstract_computer_group import AbstractComputerGroup
 
 if TYPE_CHECKING:
     from pyjamf.core import JamfServiceClient
 
 E = TypeVar("E", bound="ComputerGroup")
-J = TypeVar("J", bound = "JamfServiceClient")
 
-class ComputerGroup(Entity):
+class ComputerGroup(JAMFEntity, AbstractComputerGroup):
+    """ Computer Group Type
+    """
     
     _id: int
     _name: str
@@ -19,7 +24,7 @@ class ComputerGroup(Entity):
     _criteria: list
     _computers: list
     
-    def __init__(self: E, client: J) -> None:
+    def __init__(self: E, client: JamfServiceClient) -> None:
         super().__init__(client)
         
         self._id = 0
@@ -60,7 +65,7 @@ class ComputerGroup(Entity):
         return self._computers
     
     @classmethod
-    def from_json(cls: Type[E], entry: Dict, client: J) -> E:
+    def from_json(cls: Type[E], entry: Dict, client: JamfServiceClient) -> E:
         
         _new = cls(client)
         
