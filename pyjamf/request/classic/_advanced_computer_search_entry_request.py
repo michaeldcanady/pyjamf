@@ -9,6 +9,7 @@ from pyrestsdk.request.supports_types import SupportsGetMethod, SupportsInvokeRe
 from pyjamf.request.classic._base_jamf_request import BaseJamfEntryRequest
 
 from pyjamf.types.classic.models import AdvancedComputerSearch
+from pyjamf.types import RequestType
 
 if TYPE_CHECKING:
     from pyjamf.core import JamfServiceClient
@@ -20,24 +21,9 @@ class AdvancedComputerSearchEntryRequest(
     SupportsGetMethod,
     BaseJamfEntryRequest[AdvancedComputerSearch]
 ):
+    
+    __request_type__ = RequestType.Single
+    __results_key__ = "advanced_computer_search"
 
     def __init__(self, request_url: str, client, options: Optional[Iterable[Union[QueryOption, HeaderOption]]]) -> None:
         super().__init__(request_url, client, options)
-
-    
-    def parse_result(self, obj_type, result: Union[Dict[str, Any], List[Dict[str, Any]]], client) -> Union[List[J], J]:
-        """parses return into expected return type"""
-        
-        result = result["advanced_computer_search"]
-
-        _operation_dict: Dict[
-            Type, Callable[[Union[Dict, List], JamfServiceClient], Union[List[J], J]]
-        ] = {
-            dict: lambda x, y: obj_type.from_json(x, y),  # type: ignore
-            list: lambda x, y: [obj_type.from_json(raw_result, y) for raw_result in x],
-        }
-
-        if (_func := _operation_dict.get(type(result), None)) is None:
-            raise Exception(f"unexpected type: {type(result)}")
-
-        return _func(result, client)
