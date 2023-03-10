@@ -1,17 +1,20 @@
-"""Houses Computer Group Type"""
+"""Houses Computer Type"""
 
 from __future__ import annotations
 
 from typing import TypeVar, TYPE_CHECKING, Type, Dict
 
 from pyjamf.types.classic.models._jamf_entity import JAMFEntity
+from pyjamf.types.classic.models._abstract_computer import AbstractComputer
 
 if TYPE_CHECKING:
     from pyjamf.core import JamfServiceClient
 
 E = TypeVar("E", bound="Computer")
 
-class Computer(JAMFEntity):
+class Computer(JAMFEntity, AbstractComputer):
+    """Computer Type
+    """
     
     _id: int
     _name: str

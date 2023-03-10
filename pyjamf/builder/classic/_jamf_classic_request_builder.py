@@ -10,6 +10,7 @@ from pyjamf.builder.classic._advanced_computer_search_request_builder import Adv
 from pyjamf.builder.classic._building_request_builder import BuildingRequestBuilder
 from pyjamf.builder.classic._category_request_builder import CategoryRequestBuilder
 from pyjamf.builder.classic._computer_group_request_builder import ComputerGroupRequestBuilder
+from pyjamf.builder.classic._computer_request_builder import ComputerRequestBuilder
 
 if TYPE_CHECKING:
     from pyjamf.core import JamfServiceClient
@@ -67,3 +68,13 @@ class JamfClassicRequestBuilder(BaseRequestBuilder):
         """
 
         return ComputerGroupRequestBuilder(self.append_segment_to_request_url("computergroups"), self.request_client)
+
+    @property
+    def computers(self) -> ComputerRequestBuilder:
+        """Creates a Computer Request Builder
+
+        Returns:
+            ComputerRequestBuilder: The Computer Request Builder
+        """
+        
+        return ComputerRequestBuilder(self.append_segment_to_request_url("computers"), self.request_client)

@@ -9,18 +9,20 @@ from pyjamf.types.classic.models._jamf_entity import JAMFEntity
 from pyjamf.types.classic.models._abstract_building import AbstractBuilding
 from pyjamf.types.classic.models._abstract_category import AbstractCategory
 from pyjamf.types.classic.models._abstract_computer_group import AbstractComputerGroup
+from pyjamf.types.classic.models._abstract_computer import AbstractComputer
 from pyjamf.types.classic.models._abstract_jamf_entity import AbstractJAMFEntity
 
 __all__ = [
     "AdvancedComputerSearch",
     "Building",
     "ComputerGroup",
-    "Category",
     "Computer",
+    "Category",
     "JAMFEntity",
     
     "AbstractBuilding",
     "AbstractCategory",
     "AbstractComputerGroup",
+    "AbstractComputer",
     "AbstractJAMFEntity",
 ]

@@ -6,6 +6,7 @@ from pyjamf.request.classic._category_entry_collection_request import CategoryEn
 from pyjamf.request.classic._category_entry_request import CategoryEntryRequest
 from pyjamf.request.classic._computer_group_entry_request import ComputerGroupEntryRequest
 from pyjamf.request.classic._computer_group_entry_collection_request import ComputerGroupEntryCollectionRequest
+from pyjamf.request.classic._computer_entry_collection_request import ComputerEntryCollectionRequest
 
 __all__ = [
     "AdvancedComputerSearchEntryRequest",
@@ -16,4 +17,5 @@ __all__ = [
     "CategoryEntryRequest",
     "ComputerGroupEntryCollectionRequest",
     "ComputerGroupEntryRequest",
+    "ComputerEntryCollectionRequest",
 ]
