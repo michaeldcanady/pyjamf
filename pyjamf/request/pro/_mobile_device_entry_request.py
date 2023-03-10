@@ -5,9 +5,9 @@ from pyrestsdk.type.model import QueryOption, HeaderOption
 
 from pyrestsdk.request.supports_types import SupportsGetMethod, SupportsInvokeRequest
 
-from pyjamf.request._base_jamf_request import BaseJamfEntryRequest
+from pyjamf.request.pro._base_jamf_request import BaseJamfEntryRequest
 
-from pyjamf.types.models import MobileDevice
+from pyjamf.types.pro.models import MobileDevice
 
 
 class MobileDeviceEntryRequest(

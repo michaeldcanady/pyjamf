@@ -4,7 +4,7 @@ from typing import Optional, Iterable
 
 from pyrestsdk.requestbuilder import BaseRequestBuilder
 
-from pyjamf.builder._app_dynamics_script_configuration_request_builder import AppDynamicsScriptConfigurationRequestBuilder
+from pyjamf.builder.pro._app_dynamics_script_configuration_request_builder import AppDynamicsScriptConfigurationRequestBuilder
 
 
 class AppDynamicsRequestBuilder(BaseRequestBuilder):

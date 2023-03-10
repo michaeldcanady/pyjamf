@@ -4,12 +4,14 @@ from pyrestsdk.type.model import QueryOption, HeaderOption
 
 from pyrestsdk.request.supports_types import SupportsGetMethod, SupportsInvokeCollectionRequest
 
-from pyjamf.request._base_jamf_request import BaseJamfEntryRequest
+from pyjamf.request.pro._base_jamf_request import BaseJamfEntryRequest
 
-class AdvancedUserContentSearchesEntryCollectionRequest(
+from pyjamf.types.pro.models import MobileDevice
+
+class MobileDeviceEntryCollectionRequest(
     SupportsInvokeCollectionRequest,
     SupportsGetMethod,
-    BaseJamfEntryRequest[str]
+    BaseJamfEntryRequest[MobileDevice]
 ):
 
     def __init__(self, request_url: str, client, options: Optional[Iterable[Union[QueryOption, HeaderOption]]]) -> None:

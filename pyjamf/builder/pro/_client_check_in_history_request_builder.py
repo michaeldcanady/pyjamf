@@ -1,8 +1,12 @@
 """Houses Catagories Request Builder Type"""
 
-from typing import Optional, Iterable
+from typing import Optional, Iterable, TypeVar
+
+from pyrestsdk.type.model import QueryOption
 
 from pyrestsdk.requestbuilder import EntityRequestBuilder
+
+O = TypeVar("O", bound=QueryOption)
 
 class ClientCheckInHistoryRequestBuilder(EntityRequestBuilder):
     """Catagories Request Builder Type"""

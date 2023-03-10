@@ -2,7 +2,7 @@
 
 from pyrestsdk.requestbuilder import BaseRequestBuilder
 
-from pyjamf.builder._mobile_devices_collection_request_builder import MobileDeviceCollectionRequestBuilder
+from pyjamf.builder.pro._mobile_devices_collection_request_builder import MobileDeviceCollectionRequestBuilder
 
 class V2RequestBuilder(BaseRequestBuilder):
     """Mobile Device Request Builder Type"""

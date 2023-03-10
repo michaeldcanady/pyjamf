@@ -1,6 +1,6 @@
 from typing import Dict, Any, List
 
-from pyjamf.types.exceptions._error import Error
+from pyjamf.types.pro.exceptions._error import Error
 
 class ServiceException(Exception):
     

@@ -4,7 +4,7 @@ from typing import Optional, Iterable
 
 from pyrestsdk.requestbuilder import EntityRequestBuilder
 
-from pyjamf.builder._client_check_in_history_request_builder import ClientCheckInHistoryRequestBuilder
+from pyjamf.builder.pro._client_check_in_history_request_builder import ClientCheckInHistoryRequestBuilder
 
 class ClientCheckInRequestBuilder(EntityRequestBuilder):
     """Catagories Request Builder Type"""
