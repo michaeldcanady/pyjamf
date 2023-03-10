@@ -3,8 +3,8 @@
 from pyrestsdk.requestbuilder import BaseRequestBuilder
 
 from pyjamf.builder.classic._computer_group_request_builder import ComputerGroupRequestBuilder
-
 from pyjamf.builder.classic._advanced_computer_search_request_builder import AdvancedComputerSearchesRequestBuilder
+from pyjamf.builder.classic._building_request_builder import BuildingRequestBuilder
 
 class JamfClassicRequestBuilder(BaseRequestBuilder):
     """Jamf Classic Request Builder Type"""
@@ -27,3 +27,8 @@ class JamfClassicRequestBuilder(BaseRequestBuilder):
     def computer_groups(self) -> ComputerGroupRequestBuilder:
         
         return ComputerGroupRequestBuilder(self.append_segment_to_request_url("computergroups"), self.request_client)
+    
+    @property
+    def buildings(self) -> BuildingRequestBuilder:
+        
+        return BuildingRequestBuilder(self.append_segment_to_request_url("buildings"), self.request_client)
