@@ -6,9 +6,9 @@ from pyjamf.types.classic.models import Category
 
 def category_collection_test():
     
-    credential = UsernamePasswordCredential(os.environ["INSTANCE"], os.environ["USERNAME"], os.environ["PASSWORD"])
+    credential = UsernamePasswordCredential(os.environ["JAMF_INSTANCE"], os.environ["JAMF_USERNAME"], os.environ["JAMF_PASSWORD"])
 
-    client = JamfServiceClient(credential, os.environ["INSTANCE"])
+    client = JamfServiceClient(credential, os.environ["JAMF_INSTANCE"])
     
     categories = client.classic_api.category.request.Get.invoke_request
     
@@ -17,9 +17,9 @@ def category_collection_test():
     
 def category_by_id_test():
 
-    credential = UsernamePasswordCredential(os.environ["INSTANCE"], os.environ["USERNAME"], os.environ["PASSWORD"])
+    credential = UsernamePasswordCredential(os.environ["JAMF_INSTANCE"], os.environ["JAMF_USERNAME"], os.environ["JAMF_PASSWORD"])
 
-    client = JamfServiceClient(credential, os.environ["INSTANCE"])
+    client = JamfServiceClient(credential, os.environ["JAMF_INSTANCE"])
 
     category = client.classic_api.category.request_by_id("2").Get.invoke_request
     
@@ -27,9 +27,9 @@ def category_by_id_test():
     
 def category_by_name_test():
     
-    credential = UsernamePasswordCredential(os.environ["INSTANCE"], os.environ["USERNAME"], os.environ["PASSWORD"])
+    credential = UsernamePasswordCredential(os.environ["JAMF_INSTANCE"], os.environ["JAMF_USERNAME"], os.environ["JAMF_PASSWORD"])
 
-    client = JamfServiceClient(credential, os.environ["INSTANCE"])
+    client = JamfServiceClient(credential, os.environ["JAMF_INSTANCE"])
     
     category = client.classic_api.category.request_by_name("CIS Security Settings").Get.invoke_request
     

@@ -6,9 +6,9 @@ from pyjamf.types.classic.models import Computer
 
 def computer_collection_test():
     
-    credential = UsernamePasswordCredential(os.environ["INSTANCE"], os.environ["USERNAME"], os.environ["PASSWORD"])
+    credential = UsernamePasswordCredential(os.environ["JAMF_INSTANCE"], os.environ["JAMF_USERNAME"], os.environ["JAMF_PASSWORD"])
 
-    client = JamfServiceClient(credential, os.environ["INSTANCE"])
+    client = JamfServiceClient(credential, os.environ["JAMF_INSTANCE"])
     
     computers = client.classic_api.computers.request.Get.invoke_request
     
@@ -16,9 +16,9 @@ def computer_collection_test():
     
 def computer_by_id_test():
     
-    credential = UsernamePasswordCredential(os.environ["INSTANCE"], os.environ["USERNAME"], os.environ["PASSWORD"])
+    credential = UsernamePasswordCredential(os.environ["JAMF_INSTANCE"], os.environ["JAMF_USERNAME"], os.environ["JAMF_PASSWORD"])
 
-    client = JamfServiceClient(credential, os.environ["INSTANCE"])
+    client = JamfServiceClient(credential, os.environ["JAMF_INSTANCE"])
     
     computer = client.classic_api.computers.request_by_id("4424").request.Get.invoke_request
     
